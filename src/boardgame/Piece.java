@@ -3,19 +3,19 @@ package boardgame;
 public class Piece {
 	protected Position position;
 	private Board board;
-		
+	
 		public Piece() {
 			
 		}
 
 		public Piece(Board board) {
-			super();
 			this.board = board;
+			//Position null declared
 			position = null;
 		}
 
 		protected Board getBoard() {
 			return board;
 		}
-	
+
 }

@@ -1,11 +1,20 @@
 package application;
 
+import java.util.Locale;
+import java.util.Scanner;
+
+import ChessLayer.ChessMatch;
+
 public class Program {
 
 	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		ChessMatch chessMatch = new ChessMatch();
 		
-		System.out.println("Class Board Created");
+			UI.printBoard(chessMatch.getPieces());
 		
+		sc.close();
 	}
 
 }

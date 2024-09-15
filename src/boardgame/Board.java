@@ -5,6 +5,7 @@ public class Board {
 	private int rows;
 	private int columns;
 	
+	//Vector of piece type
 	private Piece[][] pieces;
 	
 	public Board() {
@@ -21,8 +22,8 @@ public class Board {
 		return rows;
 	}
 
-	public void setRows(int rows) {
-		this.rows = rows;
+	public void setRows(int rorws) {
+		this.rows = rorws;
 	}
 
 	public int getColumns() {
@@ -33,6 +34,18 @@ public class Board {
 		this.columns = columns;
 	}
 	
+	//method to return pieces
+	public Piece piece(int row, int column)
+	{
+		
+		return pieces[row][column];
+		
+	}
 	
+	//method to return pieces position
+	public Piece piece(Position position)
+	{
+		return pieces[position.getRow()][position.getColumn()];
+	}
 	
 }
