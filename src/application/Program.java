@@ -4,6 +4,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import ChessLayer.ChessMatch;
+import ChessLayer.ChessPiece;
+import ChessLayer.ChessPosition;
 
 public class Program {
 
@@ -12,9 +14,17 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
 		
+		while (true) {
 			UI.printBoard(chessMatch.getPieces());
-		
-		sc.close();
+			System.out.println();
+			System.out.print("Source: ");
+			ChessPosition source = UI.readChessPosition(sc);
+			System.out.print("Target: ");
+			ChessPosition target = UI.readChessPosition(sc);
+			
+			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+		}
+				
 	}
 
 }
